@@ -1,0 +1,215 @@
+main {
+    padding-top: 4rem;
+
+    .hero {
+        padding-bottom: 5.5rem;
+        background: url("../images/bg-intro-mobile.svg") no-repeat top right;
+        background-size: contain;
+
+        .container {
+            text-align: center;
+
+            img {
+                width: 100%
+            }
+
+            .hero-content {
+                h1 {
+                    font-size: 2.5rem;
+                }
+    
+                p {
+                    margin: 1.5rem 0;
+                    color: $grayish-blue;
+                }
+    
+                .CTA {
+                    @extend CTA;
+                }
+    
+                .CTA:hover {
+                    span {
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
+    }
+
+    .options {
+        background-color: $light-grayish-blue;
+        padding: 4.25rem 0;
+
+        .container {
+            text-align: center;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+
+            p {
+                color: $grayish-blue;
+            }
+
+            .options-text {
+                margin: 1.25rem 0 3.75rem;
+            }
+
+            .options-container {
+                .option {
+                    margin-top: 2.5rem;
+    
+                    h3 {
+                        margin: 1.75rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .articles {
+        padding: 5.5rem 0;
+        background-color: $very-light-gray;
+
+        .container {
+            h2 {
+                margin-bottom: 2.25rem;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .articles-container {
+                .article {
+                    margin-top: 0.75rem;
+                    padding-bottom: 2.5rem;
+                    background-color: $white;
+                    border-radius: 10px;
+                    cursor: pointer;
+    
+                    img {
+                        width: 100%;
+                        border-radius: 10px 10px 0 0;
+                    }
+    
+                    .article-content {
+                        max-width: 80%;
+                        margin: 1.75rem auto 0;
+    
+                        small, p {
+                            color: $grayish-blue;
+                            line-height: 1rem;
+                        }
+    
+                        h3 {
+                            margin: 1rem 0;
+                        }
+                    }
+                }
+
+                .article:hover {
+                    img {
+                        opacity: 0.5;
+                    }
+
+                    .article-content {    
+                        h3 {
+                            color: $lime-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        .options {
+            .container {
+                .options-container {
+                    display: grid;
+                    grid-gap: 2.5rem;
+                    grid-template-columns: repeat(2, 1fr);
+
+                    .option {
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .articles {
+            .container {
+                .articles-container {
+                    display: grid;
+                    grid-gap: 2.5rem;
+                    grid-template-columns: repeat(2, 1fr);
+
+                    .article {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    main {
+        .hero {
+            padding: 10.5rem 0;
+            background: url("../images/bg-intro-desktop.svg") no-repeat top right -50%;
+            background-size: 50% 100%;
+    
+            .container {
+                position: relative;
+    
+                img {
+                    width: 50%;
+                    position: absolute;
+                    right: -5%;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+    
+                .hero-content {
+                    width: 35%;
+                    text-align: left;
+    
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+        
+                    p {
+                        margin: 1.5rem 0;
+                    }
+                }
+            }
+        }
+
+        .options {
+            .container {
+                h2, .options-text {
+                    width: 50%;
+                    text-align: left;
+                }
+
+                .options-container {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+
+        .articles {
+            .container {
+                .articles-container {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+    }
+}
